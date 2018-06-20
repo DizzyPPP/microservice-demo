@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: microservice-config-server
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          #公有仓库不需要填写用户名和密码
+          username:
+          password:
+          search-paths: configs
+          uri: https://github.com/DizzyPPP/SpringCloudConfig
+server:
+  port: 8888
+

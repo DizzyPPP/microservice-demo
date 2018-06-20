@@ -1,0 +1,17 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8769
+spring:
+  application:
+    name: microservice-zuul
+zuul:
+  routes:
+    feign-service:
+      path: /feign/**
+      service-id: microservice-feign
+    ribbon-service:
+      path: /ribbon/**
+      service-id: microservice-ribbon
