@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RefreshScope
 @EnableEurekaClient
-public class MicroserviceConfigClientApplication {
+public class MicroserviceRabbitmqConfigClientApplication {
 
     @Value("${foo}")
     String foo;
@@ -22,6 +22,6 @@ public class MicroserviceConfigClientApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(MicroserviceConfigClientApplication.class, args);
+        SpringApplication.run(MicroserviceRabbitmqConfigClientApplication.class, args);
     }
 }

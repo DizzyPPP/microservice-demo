@@ -1,0 +1,64 @@
+version: "3"
+services:
+  peer1:
+    image: <docker image name>
+    deploy:
+      #定义 replicated 模式的服务的副本的数量
+      replicas: 1
+      update_config:
+        #更新副本的数量
+        parallelism: 1
+        #更新间隔
+        delay: 2s
+      restart_policy:
+        #定义服务的重启条件
+        condition: on-failure
+    networks:
+      - eureka-net
+    ports:
+      - "8601:8601"
+    environment:
+      - spring.profiles.active=peer1
+  peer2:
+    image: <docker image name>
+    deploy:
+      #定义 replicated 模式的服务的副本的数量
+      replicas: 1
+      update_config:
+        #更新副本的数量
+        parallelism: 1
+        #更新间隔
+        delay: 2s
+      restart_policy:
+        #定义服务的重启条件
+        condition: on-failure
+    networks:
+      - eureka-net
+    ports:
+      - "8602:8602"
+    environment:
+      - spring.profiles.active=peer2
+  peer3:
+    image: <docker image name>
+    deploy:
+      #定义 replicated 模式的服务的副本的数量
+      replicas: 1
+      update_config:
+        #更新副本的数量
+        parallelism: 1
+        #更新间隔
+        delay: 2s
+      restart_policy:
+        #定义服务的重启条件
+        condition: on-failure
+    networks:
+      - eureka-net
+    ports:
+      - "8603:8603"
+    environment:
+      - spring.profiles.active=peer3
+
+networks:
+  #集群网络名称
+  eureka-net:
+    driver: overlay

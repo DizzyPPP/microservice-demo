@@ -9,8 +9,13 @@ spring:
       discovery:
         enabled: true
         service-id: MICROSERVICE-CONFIG-SERVER
+  rabbitmq:
+    host: 216.126.236.109
+    port: 5672
+    username: test
+    password: test123
 server:
-  port: 8881
+  port: 8882
 eureka:
   client:
     service-url:

@@ -6,7 +6,7 @@ spring:
       label: master
       server:
         git:
-          #¹«ÓĞ²Ö¿â²»ĞèÒªÌîĞ´ÓÃ»§ÃûºÍÃÜÂë
+          #å…¬æœ‰ä»“åº“ä¸éœ€è¦å¡«å†™ç”¨æˆ·åå’Œå¯†ç 
           username:
           password:
           search-paths: configs
@@ -14,3 +14,7 @@ spring:
 server:
   port: 8888
 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8889/eureka/

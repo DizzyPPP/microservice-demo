@@ -8,3 +8,57 @@ eureka:
     register-with-eureka: false
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+spring:
+  application:
+    name: EUREKA_SERVER
+
+#以下为eureka服务器集群使用的配置文件，使用时需要注释上面的配置
+#security:
+#  basic:
+#    enabled: true
+#  user:
+#    name: ryu
+#    password: admin
+#------
+#server:
+#  port: 8601
+#spring:
+#  profiles: peer1
+#eureka:
+#  instance:
+#    hostname: peer1
+#    prefer-ip-address: true
+#    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+#  client:
+#    service-url:
+#      defaultZone: http://ryu:admin@peer2:8602/eureka/,http://ryu:admin@peer3:8603/eureka/
+#    register-with-eureka: true
+#------
+#server:
+#  port: 8602
+#spring:
+#  profiles: peer2
+#eureka:
+#  instance:
+#    hostname: peer2
+#    prefer-ip-address: true
+#    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+#  client:
+#    service-url:
+#      defaultZone: http://ryu:admin@peer2:8601/eureka/,http://ryu:admin@peer3:8603/eureka/
+#    register-with-eureka: true
+#------
+#server:
+#  port: 8603
+#spring:
+#  profiles: peer3
+#eureka:
+#  instance:
+#    hostname: peer3
+#    prefer-ip-address: true
+#    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+#  client:
+#    service-url:
+#      defaultZone: http://ryu:admin@peer1:8601/eureka/,http://ryu:admin@peer2:8602/eureka/
+#    register-with-eureka: true
+
