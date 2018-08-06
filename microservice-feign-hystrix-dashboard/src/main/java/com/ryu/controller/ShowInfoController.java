@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ShowInfoController {
 
+    //注入服务
     @Autowired
     SchedualShowInfoService schedualShowInfoService;
 

@@ -7,6 +7,10 @@ import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ * 使用@LoadBalanced注解RestTemplate开启负载均衡
+ */
+
 @SpringBootApplication
 @EnableDiscoveryClient
 public class MicroserviceRibbonApplication {

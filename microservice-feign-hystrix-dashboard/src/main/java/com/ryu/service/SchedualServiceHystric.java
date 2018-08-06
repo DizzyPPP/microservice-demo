@@ -3,10 +3,12 @@ package com.ryu.service;
 import org.springframework.stereotype.Component;
 
 /**
- * override
- *
  * @author Administrator
  * @create 2018-06-20 14:36
+ */
+
+/**
+ * 使用fallback属性时候,需要使用@Component注解，保证fallback指定的类能被Spring容器扫描到
  */
 
 @Component

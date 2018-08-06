@@ -14,6 +14,9 @@ import org.springframework.web.client.RestTemplate;
  * @create 2018-06-20 9:40
  */
 
+/**
+ * 使用@HystrixCommand注解来创建断路器，指定fallbackMethod来指定回调失败或超时时调用的熔断方法
+ */
 @Service
 public class ShowService {
 

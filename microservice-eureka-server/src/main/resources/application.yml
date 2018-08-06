@@ -2,19 +2,25 @@ server:
   port: 8761
 eureka:
   instance:
+    #服务器实例名
     hostname: localhost
   client:
+   #服务注册，服务续约
     fetch-registry: true
+    #是否注册到eureka
     register-with-eureka: false
     service-url:
+      #eureka注册中心url
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 spring:
   application:
     name: EUREKA_SERVER
 
 #以下为eureka服务器集群使用的配置文件，使用时需要注释上面的配置
+#spring security，用来登录eureka服务器的信息
 #security:
 #  basic:
+#    #开启验证
 #    enabled: true
 #  user:
 #    name: ryu
@@ -23,10 +29,12 @@ spring:
 #server:
 #  port: 8601
 #spring:
+#  #配置名称
 #  profiles: peer1
 #eureka:
 #  instance:
 #    hostname: peer1
+#    #自动获取ip
 #    prefer-ip-address: true
 #    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
 #  client:

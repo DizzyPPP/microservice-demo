@@ -6,4 +6,5 @@ spring:
 eureka:
   client:
     service-url:
+      #eureka注册中心url
       defaultZone: http://localhost:8761/eureka/
