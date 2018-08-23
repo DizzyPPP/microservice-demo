@@ -24,4 +24,13 @@ public class ShowInfoController {
         return showService.showInfoService(name);
     }
 
+    @RequestMapping("/showTest")
+    public String showTest(@RequestParam String name){
+        return showService.showTestString(name);
+    }
+
+    @RequestMapping("/showTime")
+    public String showTime(@RequestParam String name){
+        return showService.showCurrentTime(name);
+    }
 }

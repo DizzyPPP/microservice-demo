@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 @EnableEurekaClient
 @SpringBootApplication
 @RestController
@@ -15,9 +18,20 @@ public class MicroserviceEurekaClientApplication {
 
     @Value("${server.port}")
     String port;
+
     @RequestMapping("/showInfo")
-    public String show(@RequestParam String name){
-        return  name + "is login in port " + port;
+    public String showInfo(@RequestParam String name){
+        return  name + " is login in port " + port +", showInfo is working!" ;
+    }
+
+    @RequestMapping("/showTest")
+    public String showTest(@RequestParam String name){
+        return  name + "is login in port " + port +", showTestString is working!";
+    }
+
+    @RequestMapping("/showTime")
+    public String showTime(@RequestParam String name){
+        return  name + " is login in port " + port + ", Time: " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date().getTime()) + ", Hystrix showCurrentTime is working!";
     }
 
     public static void main(String[] args) {
