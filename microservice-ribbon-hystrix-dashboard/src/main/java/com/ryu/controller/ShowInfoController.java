@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ShowInfoController {
 
     @Autowired
-    ShowService showService;
+    private ShowService showService;
 
     @RequestMapping("/showInfo")
     public String showInfo(@RequestParam String name){
@@ -32,5 +32,10 @@ public class ShowInfoController {
     @RequestMapping("/showTime")
     public String showTime(@RequestParam String name){
         return showService.showCurrentTime(name);
+    }
+
+    @RequestMapping("/showplus")
+    public String showEmul(@RequestParam int a, @RequestParam int b, @RequestParam String name){
+        return showService.plusAndshowName(a, b, name);
     }
 }

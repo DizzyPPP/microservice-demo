@@ -31,7 +31,13 @@ public class MicroserviceEurekaClientApplication {
 
     @RequestMapping("/showTime")
     public String showTime(@RequestParam String name){
-        return  name + " is login in port " + port + ", Time: " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date().getTime()) + ", Hystrix showCurrentTime is working!";
+        return  name + " is login in port " + port + ", Time: " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date().getTime()) + ", showCurrentTime is working!";
+    }
+
+    @RequestMapping("/showplus")
+    public String showplus(@RequestParam int a, @RequestParam int b, @RequestParam String name){
+        int c = a + b;
+        return  name + " is login in port " + port + ", sum c is a+b="+ c +", showplus is working!";
     }
 
     public static void main(String[] args) {

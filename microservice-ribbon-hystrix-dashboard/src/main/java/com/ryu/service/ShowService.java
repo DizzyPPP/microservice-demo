@@ -46,8 +46,16 @@ public class ShowService {
     }
 
     public String showCurrentTimeErrorMes(String name){
-        return "Error Service "+ name + " ,Time: " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date().getTime()) + ", Hystrix showCurrentTimeErrorMes is working!";
+        return "Error Service "+ name + " , Time: " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date().getTime()) + ", Hystrix showCurrentTimeErrorMes is working!";
     }
 
+    @HystrixCommand(fallbackMethod = "plusAndshowNameErrorMes")
+    public String plusAndshowName(int a, int b, String name){
+        return restTemplate.getForObject("http://MICROSERVICE-EUREKA-CLIENT/showplus?a=" + a +"&b=" + b + "&name=" + name, String.class);
+    }
+
+    public String plusAndshowNameErrorMes(int a, int b, String name){
+        return "Error Service "+ name + "a is " + a + ", b is "+ b +", Hystrix plusAndshowNameErrorMes is working!";
+    }
 
 }
